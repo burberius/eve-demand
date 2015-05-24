@@ -1,0 +1,33 @@
+body {
+	font: 12px arial, sans-serif;
+	padding: 10px;
+}
+
+table {
+	border-collapse: collapse;
+	box-shadow: 5px 5px 5px #888888;
+}
+
+table, th, td {
+	padding: 3px;
+}
+
+tr {
+	border: 1px solid black;
+}
+
+td.value {
+	text-align: center;
+}
+
+thead {
+	background-color: #9090ff;
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.grid {
+	width: 500px;
+	height: 250px;
+}

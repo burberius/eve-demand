@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="killdata">
+<head>
+<meta charset="UTF-8">
+<title>Material demand per region from kills</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.0/ui-bootstrap-tpls.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-controller="DataCtrl">
+	<div ng-hide="typesLoaded">Loading type names:
+	<progressbar animate="false" value="typesCount" type="success"><b>{{typesCount}}%</b></progressbar>
+	</div>
+	<div ng-hide="kills == 2000">Loading kills:
+	<progressbar animate="false" value="kills" max="2000" type="success"><b>{{kills}} / 2000</b></progressbar>
+	</div>
+	Last kill: {{lastkill | date : 'yyyy-MM-dd HH:mm:ss'}}
+	<table class="data">
+		<thead>
+			<tr>
+				<td>Name</td>
+				<td>Count</td>
+			</tr>
+		</thead>
+		<tr ng-repeat="value in table">
+			<td>{{value.name}}</td>
+			<td class="value">{{value.count}}</td>
+		</tr>
+	</table>
+</body>
+</html>
